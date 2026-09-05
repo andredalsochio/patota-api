@@ -1,0 +1,14 @@
+version: '1.9'
+services:
+  patota-db:
+    image: mongo
+    container_name: patota-db
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - mongodb_data:/data/db
+volumes:
+  mongodb_data:
